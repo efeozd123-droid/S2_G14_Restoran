@@ -1,2 +1,2 @@
-# 2_14_Restraunt
+# 2_G14_Restoran
 Restoran için geliştirilern bir pyhton uygulaması
