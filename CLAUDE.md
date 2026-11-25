@@ -14,7 +14,7 @@ personel ve stok**. Sınıf ve tablo tasarımı öğrencilere aittir.
 - Grup: Section 2, Grup 14 (3 kişi) → **grup projesi** şartları geçerli.
 - Son teslim: **21 Aralık 2026 Pazar 12.00**, ieüLearn → Dönem Sonu Projesi, tek zip.
   Zip adı: `S2_G14_<ProjeAdi>.zip` (Türkçe karakter ve boşluk yok). Geç teslim kabul edilmez.
-- Depo: https://github.com/efeozd123-droid/2_14_Restraunt (public olmalı)
+- Depo: https://github.com/efeozd123-droid/S2_G14_Restoran (public olmalı)
 
 ## Yapay zekâ kuralları (yönerge Bölüm 4 — kesin)
 

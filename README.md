@@ -46,7 +46,7 @@ Uygulama sol tarafta bir menü ve sağda içerik alanından oluşur. Açılışt
 
 ## GitHub Deposu
 
-https://github.com/efeozd123-droid/2_14_Restraunt
+https://github.com/efeozd123-droid/S2_G14_Restoran
 
 ## Yapay Zekâ Kullanım Beyanı
 
