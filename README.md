@@ -9,9 +9,9 @@ masalar, rezervasyonlar, sipariş takibi, menü, personel ve stok.
 
 | Üye | GitHub | Sorumlu olduğu sınıflar | GUI ekranı |
 |---|---|---|---|
-| _Ad Soyad_ | [efeozd123-droid](https://github.com/efeozd123-droid) | | |
-| _Ad Soyad_ | [dnzctnn](https://github.com/dnzctnn) | | |
-| _Ad Soyad_ | _kullanıcı adı_ | | |
+| Efe Özdemir | [efeozd123-droid](https://github.com/efeozd123-droid) | | |
+| Deniz Çetin | [dnzctnn](https://github.com/dnzctnn) | | |
+| Ada Mısırlı | [adamisirli](https://github.com/adamisirli) | | |
 
 ## Projenin Amacı
 
