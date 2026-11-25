@@ -55,9 +55,8 @@ https://github.com/efeozd123-droid/2_14_Restraunt
 | Claude | `README.md` şablonu ve proje açıklaması |
 | Claude | `kod/main.py` ve `kod/gui/` klasörü: ana pencere, yan menü, ana panel, geçici modül ekranları, tema, ortak arayüz bileşenleri (tablo, form, bilgi kartı), ortak kayıt ekranı şablonu (`kayit_ekrani.py`) ve Masalar ekranı (`masalar.py`) |
 | Claude | `TESLIM.md` (yönergeden çıkarılan teslim kontrol listesi), `CLAUDE.md` (YZ kullanım kuralları), `.gitignore` |
-| — | Back end (`kod/modeller/`, `kod/veritabani.py`), veri tabanı (`veritabani.sql`), sınıf diyagramı: **kod YZ'ye yazdırılmadı** |
-| Claude | Back end / veri tabanı hataları: öğretim elemanının izniyle yalnızca hata mesajlarının anlamı ve hatanın yeri/nedeni hakkında açıklama alındı; düzeltmeler öğrenciler tarafından yazıldı |
+| — | Back end (`kod/modeller/`, `kod/veritabani.py`), veri tabanı (`veritabani.sql`), sınıf diyagramı: **YZ kullanılmadı** |
 
-Öğretim elemanının 25.11.2026 tarihli kararı gereği YZ ile yalnızca README ve arayüz (GUI) yazılmıştır; back end ve veri tabanında yalnızca hata açıklaması alınmıştır.
+Öğretim elemanının 25.11.2026 tarihli kararı gereği YZ yalnızca README ve arayüz (GUI) için kullanılmıştır.
 
 _(Proje ilerledikçe güncellenecek.)_

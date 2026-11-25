@@ -34,13 +34,9 @@ hâlinde destek" iznini de kaldırır. Bu yüzden:
 | README | `README.md` | Serbest. İçerik kodla uyumlu olmalı. |
 | Çalışma düzeni dosyaları | `CLAUDE.md`, `TESLIM.md`, `.gitignore`, `kod/requirements.txt` | Yönergeyi aktaran kural/kontrol listesi; proje içeriği yazılmaz. |
 
-- **Öğretmen modu (öğretim elemanının izni, grup tarafından 25.11.2026'da aktarıldı):** öğrencilerin
-  back end / veri tabanı konusunda hatalarla ilgili sınırlı yardım almasına izin verildi. Bu yüzden:
-  - Öğrencinin yazdığı kodu veya hata mesajını okuyup **hatanın yerini (dosya/satır) ve nedenini**
-    Türkçe maddelerle söyleyebilirsin.
-  - **Düzeltilmiş kodu, eksik satırı, sorguyu veya sınıfı yazma**; çözümü kod bloğu olarak verme.
-    Tablo/sınıf tasarımı önerme ("şu sütun olmalı" deme). Düzeltmeyi öğrenci kendi eliyle yapar.
-  - Back end dosyalarını düzenleme.
+- Yönerge back end için **hata ayıklamada da** YZ kullanımını yasaklar. Öğrencinin back end kodunu
+  okuyup hatasını gösterme ("öğretmen modu") ancak dersin öğretim elemanı bunu bu grup için açıkça
+  onaylarsa yapılır; onay alınırsa tarihiyle buraya yazılır. **Şu an onay yok.**
 - Python/OOP kavramları (kalıtım, `@property`, try/except, parametreli sorgu…) yalnızca **projeden
   bağımsız, genel örneklerle** anlatılabilir. Proje sınıflarıyla aynı yapıda "örnek" yazarak dolaylı
   kod verilmez.
