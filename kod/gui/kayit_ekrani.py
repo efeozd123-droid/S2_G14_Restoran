@@ -37,9 +37,11 @@ class KayitEkrani(Sayfa):
         raise NotImplementedError
 
     def kayit_guncelle(self, kimlik, degerler):
+        """kimlik tablodan gelir ve METİN'dir (ör. "3"); gerekirse int(kimlik) ile çevrilir."""
         raise NotImplementedError
 
     def kayit_sil(self, kimlik):
+        """kimlik METİN'dir (ör. "3")."""
         raise NotImplementedError
 
     # ------------------------------------------------ ekran kurulumu
@@ -144,7 +146,18 @@ class KayitEkrani(Sayfa):
 
         toplam = len(self._tum_satirlar)
         self.sayac.configure(text=f"{len(satirlar)} / {toplam} kayıt" if metin else f"{toplam} kayıt")
-        self.secili_kimlik = None
+
+        # Düzenlenmekte olan kayıt hâlâ listedeyse seçili kalır (form korunur);
+        # süzgeç dışında kaldıysa seçim ve form temizlenir. Aksi hâlde Kaydet kopya kayıt ekler.
+        if self.secili_kimlik is not None:
+            agac = self.tablo.agac
+            eslesen = [i for i in agac.get_children()
+                       if str(agac.item(i, "values")[0]) == self.secili_kimlik]
+            if eslesen:
+                agac.selection_set(eslesen[0])
+            else:
+                self.secili_kimlik = None
+                self.form.temizle()
         self._modu_goster()
 
     def _sutun_sirasi(self, anahtar):
@@ -154,8 +167,11 @@ class KayitEkrani(Sayfa):
         satir = self.tablo.secili()
         if satir is None:
             self.secili_kimlik = None
-        else:
+        elif satir[0] != self.secili_kimlik:
+            # Yalnızca başka bir kayda geçilince form doldurulur; aynı kayıt yeniden
+            # seçildiğinde (ör. arama sonrası) kullanıcının düzenlemeleri silinmez.
             self.secili_kimlik = satir[0]
+            self.form.temizle()
             degerler = {}
             for alan in self.ALANLAR:
                 anahtar = alan[0]

@@ -102,7 +102,8 @@ Bir ekran yeni metot gerektirirse Claude ihtiyacı buraya "öneri" olarak ekler,
 - Modül ekranları `KayitEkrani` şablonundan türer. Bir modülün metotları hazır olunca ekran dosyasında
   `SUTUNLAR` / `ALANLAR` ve dört bağlantı metodu (`kayitlari_getir`, `kayit_ekle(degerler)`,
   `kayit_guncelle(kimlik, degerler)`, `kayit_sil(kimlik)`) doldurulur; ekran `MODULLER` listesine bağlanır.
-  `kayitlari_getir` satırlarının ilk değeri kaydın kimliğidir (id).
+  `kayitlari_getir` satırlarının ilk değeri kaydın kimliğidir (id). Ekran `kimlik`'i ve form
+  değerlerini **metin** (veya boş alan için `None`) olarak gönderir; sayı gerekiyorsa back end çevirir.
 
 | Modül | Sınıf.metot | Parametreler | Döndürür | Sahibi |
 |---|---|---|---|---|
