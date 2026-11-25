@@ -7,13 +7,14 @@ YapimAsamasinda yerine yeni ekran sınıfı yapmak yeterlidir.
 import customtkinter as ctk
 
 from gui.ana_panel import AnaPanel
+from gui.masalar import MasalarEkrani
 from gui.tema import RENKLER, temayi_uygula, yazi
 from gui.yapim_asamasinda import YapimAsamasinda
 
 MODULLER = [
     {"anahtar": "ana_panel", "baslik": "Ana Panel", "sinif": AnaPanel},
     {
-        "anahtar": "masalar", "baslik": "Masalar", "sinif": None,
+        "anahtar": "masalar", "baslik": "Masalar", "sinif": MasalarEkrani,
         "aciklama": "Salondaki masalar ve anlık durumları.",
         "ozellikler": ["Masa listesi ve durumu (boş, dolu, rezerve)",
                        "Masa ekleme, düzenleme ve silme",
