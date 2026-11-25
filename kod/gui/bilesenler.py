@@ -78,23 +78,32 @@ class Tablo(ctk.CTkFrame):
                  background=[("active", RENKLER["kenar"])])
         cls._stil_hazir = True
 
-    def doldur(self, satirlar):
-        """Tabloyu temizleyip verilen satırlarla doldurur. None değerler boş gösterilir."""
+    def doldur(self, satirlar, etiketler=None):
+        """Tabloyu temizleyip verilen satırlarla doldurur. None değerler boş gösterilir.
+
+        etiketler: her satır için ek Treeview etiketleri (örn. durum rengi), isteğe bağlı.
+        """
         self.temizle()
         for sira, satir in enumerate(satirlar):
             degerler = ["" if d is None else d for d in satir]
             etiket = ("cift",) if sira % 2 else ()
+            if etiketler:
+                etiket = etiket + tuple(etiketler[sira])
             self.agac.insert("", "end", values=degerler, tags=etiket)
+
+    def renk_etiketi(self, etiket, yazi_rengi):
+        """Bir etikete sahip satırların yazı rengini ayarlar."""
+        self.agac.tag_configure(etiket, foreground=yazi_rengi)
 
     def temizle(self):
         self.agac.delete(*self.agac.get_children())
 
     def secili(self):
-        """Seçili satırın değerlerini demet olarak döner; seçim yoksa None."""
+        """Seçili satırın değerlerini metin demeti olarak döner; seçim yoksa None."""
         secim = self.agac.selection()
         if not secim:
             return None
-        return tuple(self.agac.item(secim[0], "values"))
+        return tuple(str(d) for d in self.agac.item(secim[0], "values"))
 
     def secim_degisince(self, fonksiyon):
         self.agac.bind("<<TreeviewSelect>>", lambda _olay: fonksiyon())
