@@ -6,7 +6,8 @@ Kuralların kaynağı dersin yönergesidir: *MBP 207 Dönem Sonu Projesi — Yö
 
 ## Proje
 
-Restoranlar için Python masaüstü uygulaması. _(Kapsam grup tarafından netleştirilecek.)_
+Restoranlar için Python masaüstü uygulaması. Modüller: **masa, rezervasyon, sipariş takibi, menü,
+personel ve stok**. Sınıf ve tablo tasarımı öğrencilere aittir.
 
 - Dil: Python 3 · GUI: **CustomTkinter** · Veri tabanı: **SQLite** (`sqlite3`, kurulum gerektirmez)
 - PyCharm'da açılıp `kod/main.py` ile çalışmalı. Harici kütüphaneler `kod/requirements.txt` içinde.
@@ -69,6 +70,12 @@ kod/
   veritabani.py         # VeriTabani sınıfı: tüm SQL burada        (BACK END — YZ yasak)
   modeller/             # iş mantığı sınıfları                     (BACK END — YZ yasak)
   gui/                  # arayüz ekranları                         (YZ serbest)
+    ana_pencere.py      # yan menü + içerik alanı; MODULLER listesi ekranları tanımlar
+    sayfa.py            # Sayfa taban sınıfı: başlık, açıklama, "bağlantısız" uyarısı
+    ana_panel.py        # açılış ekranı: özet kartları, hızlı erişim
+    yapim_asamasinda.py # back end'i hazır olmayan modüller için geçici ekran
+    bilesenler.py       # Tablo, FormPaneli, BilgiKarti, düğmeler, mesaj kutuları
+    tema.py             # renkler ve yazı tipleri
 veritabani.sql          # CREATE TABLE + örnek veri + temel sorgular (ÖĞRENCİ — YZ yasak)
 sinif_diyagrami.pdf     # UML sınıf diyagramı                     (ÖĞRENCİ — YZ yasak)
 README.md               #                                          (YZ serbest)
@@ -82,12 +89,20 @@ TESLIM.md               # teslim kontrol listesi
 
 ### Arayüz ↔ back end sözleşmesi
 
-GUI'nin `VeriTabani` ve model sınıflarından beklediği metotlar. Yeni ekran yeni metot gerektirirse
-buraya eklenir; metodu sınıfın sahibi yazar.
+GUI'nin `VeriTabani` ve model sınıflarından beklediği metotlar. Metot adlarını, parametrelerini ve
+dönüş değerlerini **sınıfın sahibi belirleyip buraya yazar**; ekran bu tabloya göre bağlanır.
+Bir ekran yeni metot gerektirirse Claude ihtiyacı buraya "öneri" olarak ekler, sahibi onaylar ve yazar.
 
-| Sınıf.metot | Parametreler | Döndürür | Kullanan ekran | Sahibi |
+- `kod/main.py` `VeriTabani()` nesnesini **parametresiz** oluşturur. `kod/veritabani.py` yoksa veya
+  bağlantı hata verirse arayüz "bağlantısız" modda açılır. Kurucu farklı olacaksa `main.py` güncellenir.
+- Ekle/güncelle/sil hataları (`ValueError`, `sqlite3.IntegrityError` vb.) back end'de yutulmaz;
+  GUI yakalayıp `messagebox` ile anlamlı mesaj gösterir.
+- Bir modülün metotları hazır olunca `gui/ana_pencere.py` içindeki `MODULLER` listesinde o modülün
+  `"sinif"` değeri gerçek ekran sınıfıyla değiştirilir.
+
+| Modül | Sınıf.metot | Parametreler | Döndürür | Sahibi |
 |---|---|---|---|---|
-| _(kapsam netleşince doldurulacak)_ | | | | |
+| _(sınıf sahipleri dolduracak)_ | | | | |
 
 ## Görev dağılımı
 
