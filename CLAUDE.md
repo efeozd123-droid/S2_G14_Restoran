@@ -73,7 +73,9 @@ kod/
     ana_pencere.py      # yan menü + içerik alanı; MODULLER listesi ekranları tanımlar
     sayfa.py            # Sayfa taban sınıfı: başlık, açıklama, "bağlantısız" uyarısı
     ana_panel.py        # açılış ekranı: özet kartları, hızlı erişim
-    yapim_asamasinda.py # back end'i hazır olmayan modüller için geçici ekran
+    kayit_ekrani.py     # KayitEkrani: liste + arama + form + ekle/güncelle/sil ortak şablonu
+    masalar.py          # MasalarEkrani(KayitEkrani): Masa sınıfı yazılınca alanlar/metotlar doldurulur
+    yapim_asamasinda.py # henüz ekranı yazılmamış modüller için geçici sayfa
     bilesenler.py       # Tablo, FormPaneli, BilgiKarti, düğmeler, mesaj kutuları
     tema.py             # renkler ve yazı tipleri
 veritabani.sql          # CREATE TABLE + örnek veri + temel sorgular (ÖĞRENCİ — YZ yasak)
@@ -97,8 +99,10 @@ Bir ekran yeni metot gerektirirse Claude ihtiyacı buraya "öneri" olarak ekler,
   bağlantı hata verirse arayüz "bağlantısız" modda açılır. Kurucu farklı olacaksa `main.py` güncellenir.
 - Ekle/güncelle/sil hataları (`ValueError`, `sqlite3.IntegrityError` vb.) back end'de yutulmaz;
   GUI yakalayıp `messagebox` ile anlamlı mesaj gösterir.
-- Bir modülün metotları hazır olunca `gui/ana_pencere.py` içindeki `MODULLER` listesinde o modülün
-  `"sinif"` değeri gerçek ekran sınıfıyla değiştirilir.
+- Modül ekranları `KayitEkrani` şablonundan türer. Bir modülün metotları hazır olunca ekran dosyasında
+  `SUTUNLAR` / `ALANLAR` ve dört bağlantı metodu (`kayitlari_getir`, `kayit_ekle(degerler)`,
+  `kayit_guncelle(kimlik, degerler)`, `kayit_sil(kimlik)`) doldurulur; ekran `MODULLER` listesine bağlanır.
+  `kayitlari_getir` satırlarının ilk değeri kaydın kimliğidir (id).
 
 | Modül | Sınıf.metot | Parametreler | Döndürür | Sahibi |
 |---|---|---|---|---|
@@ -111,9 +115,9 @@ dokümantasyon yapan üye bireysel katkı puanını tam alamaz.
 
 | Üye | GitHub | İş mantığı sınıfları | GUI ekranı |
 |---|---|---|---|
-| _Ad Soyad_ | efeozd123-droid | | |
-| _Ad Soyad_ | dnzctnn | | |
-| _Ad Soyad_ | _kullanıcı adı_ | | |
+| Efe Özdemir | efeozd123-droid | | |
+| Deniz Çetin | dnzctnn | | |
+| Ada Mısırlı | adamisirli | | |
 
 ## Git ve kod kuralları
 
